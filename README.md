@@ -14,6 +14,10 @@ Here I tried building a small web-app that registers time for co-workers. Initia
 
 In this document I'll log my progress while getting to know NuxtJS. I'll write down interesting findings and other code snippets. It will also contain the code used for this project.
 
+# Build
+
+So for the front-end I made a design, but while working on the back-end/nuxt I redesigned the app a little. I'm going to try to make something resembling my design below.
+
 # Why NuxtJS?
 
 NuxtJS builds upon VueJS and also allows creation of universal Vue apps.
