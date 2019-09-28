@@ -17,6 +17,7 @@ In this document I'll log my progress while getting to know NuxtJS. I'll write d
 # Build
 
 So for the front-end I made a design, but while working on the back-end/nuxt I redesigned the app a little. I'm going to try to make something resembling my design below.
+![](https://raw.githubusercontent.com/jajan20/time-keepr-nuxt/master/group-render-time-keepr-design.png)
 
 # Why NuxtJS?
 
