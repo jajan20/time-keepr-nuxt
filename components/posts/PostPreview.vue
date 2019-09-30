@@ -33,12 +33,9 @@ export default {
 }
 
 .post-preview {
-  border: solid 1px black;
-  transition: background-color 150ms;
-  width: 25%;
-  margin-bottom: 10px;
-  padding: 10px;
-  display: inline-block;
+    border: solid 1px black;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
 a {
