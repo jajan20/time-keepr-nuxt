@@ -1,27 +1,51 @@
 <template>
   <div class="home-page">
-    <section class="welcome-container">
-      <h1>Hello World</h1>
-      <p>Time Keepr is a simple app that will help you log your worked hours in a simple and efficient way</p>
-      <button>Continue</button>
-    </section>
-    <section class="overview">
-      <PostPreview id="1" date="01-01-2019" workedHours="09:20h"/>
-      <PostPreview id="2" date="05-01-2019" workedHours="08:15h"/>
-      <PostPreview id="3" date="09-01-2019" workedHours="03:30h"/>
-    </section>
+    <h1>Welcome</h1>
+    <p>Time Keepr is a simple app that will help you log your worked hours in a simple and efficient way</p>
+    <button class="button">Register Time</button>
+    <nuxt-link :to="'/posts/'" class="nuxt-link">Archive</nuxt-link>
   </div>
 </template>
 
 <script>
-import PostPreview from '../components/posts/PostPreview'
-
 export default {
-  components: {
-    PostPreview
-  }
+
 }
 </script>
 
 <style scoped>
+.home-page {
+  margin: 10px;
+  padding: 10px;
+  border: solid 1px black;
+  width: 320px;
+  height: 568px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.button {
+  margin: 30px auto;
+  background: #00BFFF;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+  border-radius: 4px;
+  outline: none;
+  padding: 10px 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 50%;
+  cursor: pointer;
+}
+
+.nuxt-link {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 </style>
