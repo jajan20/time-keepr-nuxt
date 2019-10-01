@@ -39,7 +39,10 @@ input {
     padding: 10px;
 }
 
-input:focus,
+input:focus {
+  box-shadow: 0 0 0 1px rgba(0,191,255,0.18);
+  border-color: #00BFFF;
+}
 input:hover {
     border-color: #00BFFF;
 }
