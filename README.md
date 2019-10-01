@@ -44,6 +44,8 @@ Configuration is via file and folder structure which can simplify the developmen
 
 Although it will help with server-side rendering, it's not a replacement for other server-side frameworks like EJS or Handlebars. (It's not a template renderer).
 
+[NuxtJS CheatSheet](https://www.vuemastery.com/pdf/Nuxtjs-Cheat-Sheet.pdf)
+
 # SEO
 
 In a basic example the user visits an url, server returns index.html which will contain all your references to scripts and will render the page.
