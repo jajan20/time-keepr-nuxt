@@ -1,18 +1,21 @@
 <template>
     <section class="post-page">
         <nuxt-link class="nuxt-link" :to="'/'">Return</nuxt-link>
-        <PostPreview id="1" date="01-01-2019" workedHours="09:20h"/>
-        <PostPreview id="2" date="05-01-2019" workedHours="08:15h"/>
-        <PostPreview id="3" date="09-01-2019" workedHours="03:30h"/>
+        <PostList :posts="loadedPosts"/>
     </section>
 </template>
 
 <script>
-import PostPreview from '../../components/posts/PostPreview'
+import PostList from '@/components/posts/PostList'
 
 export default {
     components: {
-        PostPreview
+        PostList
+    },
+    computed: {
+        loadedPosts() {
+            return this.$store.getters.loadedPosts
+        }
     }
 }
 </script>

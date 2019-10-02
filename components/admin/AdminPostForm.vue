@@ -18,20 +18,24 @@ import AppCheck from '@/components/UI/AppCheck'
 
 export default {
     data() {
+        console.log(this.post)
         return {
             newPost: this.post ? { ...this.post } : { 
                 start: '',
                 end: '',
                 breakOne: '',
                 breakTwo: '',
-                breakThree: ''
+                breakThree: '',
+                workedHours: '',
+                date: new Date()
             }
         }
     },
     methods: {
         onSave() {
             // Save the post
-            console.log(this.newPost)
+            // console.log(this.newPost)
+            this.$emit('submit', this.newPost)
         },
         onCancel() {
             // Navigate back

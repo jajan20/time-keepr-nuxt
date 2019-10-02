@@ -2,15 +2,45 @@
     <section>
         <nuxt-link class="nuxt-link" :to="'/posts'">Return</nuxt-link>
         <article class="single-post">
-            <p>01-01-2019</p>
-            <p><strong>Start time: </strong>09:00</p>
-            <p><strong>End time: </strong>19:20</p>
-            <p><strong>Lunch time: </strong>01:00h</p>
-            <p><strong>Clocked: </strong>Yes</p>
-            <p><strong>Total: </strong>Worked 9 hours and 20 minutes.</p>
+            <h1>{{ loadedPost.title }}</h1>
+            <p>{{ loadedPost.date }}</p>
+            <p><strong>Start time: </strong>{{ loadedPost.start }}</p>
+            <p><strong>End time: </strong>{{ loadedPost.end }}</p>
+            <p><strong>Lunch time: </strong>{{ loadedPost.lunch }}</p>
+            <p><strong>Clocked: </strong>{{ loadedPost.clocked }}</p>
+            <p><strong>Total: </strong>{{ loadedPost.totalHours }}</p>
         </article>
     </section>
 </template>
+
+<script>
+export default {
+    asyncData(context) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({
+                    loadedPost:{ 
+                        id: '1', 
+                        title: 'ID: ('+ context.params.id +')',
+                        start: '09:00',
+                        end: '18:00',
+                        lunch: '01:00h',
+                        clocked: true,
+                        date: '01-02-2019', 
+                        totalHours: '9h 20m'
+                    }
+                })
+            }, 1000)
+        })
+        .then(data => {
+            return data 
+        })
+        .catch(err => {
+            context.error(new Error())
+        })
+    }
+}
+</script>
 
 <style scoped>
 section {
