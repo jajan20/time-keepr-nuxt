@@ -3,7 +3,8 @@
         <PostPreview v-for="post in posts" :key="post.id"
         :id="post.id" 
         :date="post.date" 
-        :workedHours="post.hours"/>
+        :workedHours="post.workedHours"
+        :workedMinutes="post.workedMinutes" />
     </section>
 </template>
 

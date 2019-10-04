@@ -25,7 +25,7 @@ const createStore = () => {
             },
             setPosts(vuexContext, posts) {
                 vuexContext.commit('setPosts', posts)
-            }
+            },
         },
         getters: {
             loadedPosts(state) {

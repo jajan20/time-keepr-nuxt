@@ -2,7 +2,7 @@
     <nuxt-link :to="'/posts/' + id" class="link-container">
         <article class="post-preview">
             <p>{{ date }}</p>
-            <p>{{ workedHours }}</p>
+            <p>You've worked: {{ workedHours }} hours and {{ workedMinutes}} minutes</p>
         </article>  
     </nuxt-link>
 </template>      
@@ -20,7 +20,11 @@ export default {
             required: true
         },
         workedHours: {
-            type: String,
+            type: Number,
+            required: true
+        },
+        workedMinutes: {
+            type: Number,
             required: true
         }
     }

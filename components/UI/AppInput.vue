@@ -2,6 +2,7 @@
     <div class="input-control">
         <label><slot/></label>
             <input
+            type="time"
       v-if="controlType === 'input'"
       v-bind="$attrs"
       :value="value"

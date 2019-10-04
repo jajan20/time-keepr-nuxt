@@ -1,7 +1,7 @@
 <template>
     <div class="input-check">
-        <input type="checkbox" v-if="controlType === 'input'" v-bind="$attrs" :value="minutes" @change="$emit('input', $event.target.value)">
-        <label><slot/></label>
+        <input :id="id" type="checkbox" v-if="controlType === 'input'" v-bind="$attrs" :value="minutes" @change="onToggle">
+        <label :for="id"><slot/></label>
     </div>
 </template>
 
@@ -15,7 +15,18 @@ export default {
     },
     minutes: {
         type: Number,
-        default: ''
+        default: 0
+    },
+    id: {
+      type: String,
+      default: ''
+    }
+  },
+  methods: {
+    onToggle(e) {
+      // console.log(this.$emit)
+      let value = e.target.checked ? this.minutes : 0
+      this.$emit('input', value)
     }
   }
 }
