@@ -2,7 +2,7 @@
     <section>
         <nuxt-link class="nuxt-link" :to="'/posts'">Return</nuxt-link>
         <article>
-            <p class="date-string">{{ loadedPost.date }}</p><span>{{loadedPost.time}}</span>
+            <p class="date-string">{{ loadedPost.date }} <span class="post-time">{{loadedPost.time}}</span></p>
             <p>On this day you started your workday at: <strong>{{loadedPost.start}}</strong></p>
             <p>You checked out at: <strong>{{loadedPost.end}}</strong></p>
             <p>You had a total break of: <strong>{{ loadedPost.breakOne + loadedPost.breakTwo + loadedPost.breakThree}} minutes</strong></p>
@@ -41,8 +41,14 @@ section {
 }
 
 .date-string {
-    color: crimson;
     font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-time {
+    font-size: 12px;
 }
 
 article {

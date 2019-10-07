@@ -25,8 +25,8 @@ export default {
                 breakOne: 0,
                 breakTwo: 0,
                 breakThree: 0,
-                date: new Date().toTimeString(),
-                time: new Date().toTimeString()
+                date: new Date().toDateString(),
+                time: new Date().toTimeString().substring(0, 5)
             }
         }
     },
