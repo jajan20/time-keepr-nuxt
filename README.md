@@ -179,7 +179,6 @@ Since the project was really small and the core functionality was more important
 
 1. three times.
 2. no, I usually don't register my extra time (unless it's more than an hour). to much of a hassle.
-3. -
 
 ### Jordy
 
