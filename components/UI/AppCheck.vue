@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     onToggle(e) {
-      // console.log(this.$emit)
       let value = e.target.checked ? this.minutes : 0
       this.$emit('input', value)
     }

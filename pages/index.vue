@@ -25,8 +25,8 @@ export default {
   flex-direction: column;
   position: relative;
   height: 100%;
-  min-height: 546px;
-  padding: 10px;
+  min-height: 812px;
+  padding: 20px;
 }
 
 .new-post {
