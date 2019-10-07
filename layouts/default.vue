@@ -23,7 +23,8 @@ html {
 body {
   margin: 10px;
   width: 320px;
-  height: 568px;
+  height: 100%;
+  min-height: 546px;
   border: solid 1px black;
 }
 #__nuxt,

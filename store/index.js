@@ -9,6 +9,9 @@ const createStore = () => {
         mutations: {
             setPosts(state, posts) {
                 state.loadedPosts = posts
+            },
+            addPost(state, post) {
+                state.loadedPosts.push(post)
             }
         },
         actions: {
@@ -26,6 +29,13 @@ const createStore = () => {
             setPosts(vuexContext, posts) {
                 vuexContext.commit('setPosts', posts)
             },
+            addPost(vueContext, data) {
+                return axios.post('https://time-keepr.firebaseio.com/posts.json', data)
+                .then(result => {
+                    vueContext.commit('addPost', {...data, id: result.data.name })
+                })
+                .catch(err => console.log('Error: ', err))
+            }
         },
         getters: {
             loadedPosts(state) {

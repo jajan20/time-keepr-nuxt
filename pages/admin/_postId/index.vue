@@ -1,7 +1,7 @@
 <template>
     <div class="admin-post-page">
         <section class="update-form">
-            <AdminPostForm :post="loadedPost"/>
+            <AdminPostForm/>
         </section>
     </div>
 </template>
@@ -12,14 +12,6 @@ import AdminPostForm from '@/components/admin/AdminPostForm'
 export default {
     components: {
         AdminPostForm
-    },
-    data() {
-        return {
-            loadedPost: {
-                startTime: '09:00',
-                endTime: '18:00'
-            }
-        }
     }
 }
 </script>

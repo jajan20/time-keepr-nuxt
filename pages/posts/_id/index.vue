@@ -1,43 +1,30 @@
 <template>
     <section>
         <nuxt-link class="nuxt-link" :to="'/posts'">Return</nuxt-link>
-        <article class="single-post">
-            <h1>{{ loadedPost.title }}</h1>
-            <p>{{ loadedPost.date }}</p>
-            <p><strong>Start time: </strong>{{ loadedPost.start }}</p>
-            <p><strong>End time: </strong>{{ loadedPost.end }}</p>
-            <p><strong>Lunch time: </strong>{{ loadedPost.lunch }}</p>
-            <p><strong>Clocked: </strong>{{ loadedPost.clocked }}</p>
-            <p><strong>Total: </strong>{{ loadedPost.totalHours }}</p>
+        <article>
+            <p class="date-string">{{ loadedPost.date }}</p><span>{{loadedPost.time}}</span>
+            <p>On this day you started your workday at: <strong>{{loadedPost.start}}</strong></p>
+            <p>You checked out at: <strong>{{loadedPost.end}}</strong></p>
+            <p>You had a total break of: <strong>{{ loadedPost.breakOne + loadedPost.breakTwo + loadedPost.breakThree}} minutes</strong></p>
+            <p>Which means you've worked a total of <strong>{{loadedPost.workedHours}} hours</strong> and <strong>{{loadedPost.workedMinutes}} minutes</strong></p>
         </article>
     </section>
 </template>
 
 <script>
+import axios from 'axios'
+import SinglePost from '@/components/posts/SinglePost'
+
 export default {
-    asyncData(context) {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve({
-                    loadedPost:{ 
-                        id: '1', 
-                        title: 'ID: ('+ context.params.id +')',
-                        start: '09:00',
-                        end: '18:00',
-                        lunch: '01:00h',
-                        clocked: true,
-                        date: '01-02-2019', 
-                        totalHours: '9h 20m'
-                    }
-                })
-            }, 1000)
+    asyncData(context){
+    return axios.get('https://time-keepr.firebaseio.com/posts/' + context.params.id + '.json')
+        .then(res => {
+            console.log(res.data)
+            return {
+                loadedPost: res.data
+            }
         })
-        .then(data => {
-            return data 
-        })
-        .catch(err => {
-            context.error(new Error())
-        })
+        .catch(err => context.error(err))
     }
 }
 </script>
@@ -51,5 +38,18 @@ section {
     margin-top: 20px;
     border: solid 1px black;
     padding: 10px;
+}
+
+.date-string {
+    color: crimson;
+    font-weight: 600;
+}
+
+article {
+    margin-top: 20px;
+}
+
+article p {
+    margin-bottom: 10px;
 }
 </style>

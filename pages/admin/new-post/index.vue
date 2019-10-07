@@ -32,7 +32,6 @@ export default {
                 var rhours = Math.floor(hours)
                 var minutes = (hours - rhours) * 60
                 var rminutes = Math.round(minutes)
-                console.log(rhours + " hour(s) and " + rminutes + " minute(s).")
                 return {
                     minutes: rminutes,
                     hours: rhours
@@ -42,9 +41,6 @@ export default {
             let startInMinutes = (parseInt(postData.start.substring(0,2), 10) * 60) + roundMinutes(parseInt(postData.start.substring(3,5), 10))
             let endInMinutes = (parseInt(postData.end.substring(0,2), 10) * 60) + roundMinutes(parseInt(postData.end.substring(3,5), 10))
             let breaksInMinutes = parseInt(postData.breakOne, 10) + parseInt(postData.breakTwo, 10) + parseInt(postData.breakThree, 10)
-            
-
-            // console.log(convertTime(endInMinutes - startInMinutes - breaksInMinutes))
 
             let time = convertTime(endInMinutes - startInMinutes - breaksInMinutes)
             let data = {
@@ -52,10 +48,11 @@ export default {
                 workedHours: time.hours,
                 workedMinutes: time.minutes
             }
-            axios.post('https://time-keepr.firebaseio.com/posts.json', data)
-            .then(result => console.log(result))
-            .catch(err => console.log(err))
-        }
+            this.$store.dispatch('addPost', data)
+                .then(() => {
+                    this.$router.push('/posts')
+                })
+            }
     }
 }
 </script>

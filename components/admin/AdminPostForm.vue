@@ -18,7 +18,6 @@ import AppCheck from '@/components/UI/AppCheck'
 
 export default {
     data() {
-        console.log(this.post)
         return {
             newPost: this.post ? { ...this.post } : { 
                 start: '',
@@ -26,19 +25,16 @@ export default {
                 breakOne: 0,
                 breakTwo: 0,
                 breakThree: 0,
-                date: new Date()
+                date: new Date().toTimeString(),
+                time: new Date().toTimeString()
             }
         }
     },
     methods: {
         onSave() {
-            // Save the post
-            // console.log(this.newPost)
             this.$emit('submit', this.newPost);
-            // this.$store.dispatch('registerTime', this.newPost);
         },
         onCancel() {
-            // Navigate back
             this.$router.push('/admin')
         }
     },
