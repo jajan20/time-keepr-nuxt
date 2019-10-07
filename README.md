@@ -42,6 +42,10 @@ In this document I'll log my progress while getting to know NuxtJS. I'll write d
 So for the front-end I made a design, but while working on the back-end/nuxt I redesigned the app a little. I'm going to try to make something resembling my design below.
 ![](https://raw.githubusercontent.com/jajan20/time-keepr-nuxt/master/group-render-time-keepr-design.png)
 
+**Edit:**
+Since the project took a lot longer than expected I've changed the design quite a bit. I might continue working on this project outside the previous set time limit. But for the backend I found it more important to create a frontend/backend connection, use a database and deploy the app.
+live version -> [Time Keepr](https://time-keepr-nuxt.jamiejansen1.now.sh/)
+
 ## Build Setup
 
 ``` bash
